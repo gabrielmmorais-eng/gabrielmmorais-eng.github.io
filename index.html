@@ -1,205 +1,192 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Portfólio · Gabriel Magalhães Morais</title>
-<meta name="description" content="Portfólio de projetos de Gabriel Magalhães Morais, estudante de Engenharia de Produção na UFC: análise de dados, processos, qualidade e marketing.">
-<meta property="og:title" content="Portfólio · Gabriel Magalhães Morais">
-<meta property="og:description" content="Seis projetos, do problema ao resultado: auditoria com IA, controle de desempenho, estudo de eficiência (DEA) e mais.">
-<meta property="og:image" content="img/lappito-tela-inicial.png">
+<title>Gabriel Magalhães Morais · Portfólio</title>
+<meta name="description" content="Portfólio de projetos de Gabriel Magalhães Morais, estudante de Engenharia de Produção na UFC.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;display=swap">
 <style>
-:root{--azul:#1D2440;--vermelho:#C62828;--cinza:#4a5370;--cinza2:#33405f;--linha:#e3e5ec;--fundo:#f1f2f6;--borda:#d3d6e2}
-*{box-sizing:border-box}
-body{margin:0;background:#fff;color:var(--azul);font-family:Montserrat,system-ui,sans-serif;font-size:16px;line-height:1.6}
-a{color:var(--vermelho)}a:hover{color:#8e1b1b}
-h1,h2,h3{font-family:inherit;text-wrap:balance}
+/* VOICE: formal, técnico, sóbrio; um dossiê de engenharia, não um cartaz.
+   IDEA: cada projeto é uma ficha técnica, com cabeçalho de dados e corpo.
+   PICTURE: os próprios produtos e diagramas dos sistemas.
+   COLOUR and TYPE: grafite #2A2E35 e quase preto #121417, destaque areia #D4B07A (texto em #8C6A2E sobre claro), fundo #F7F7F8; Montserrat.
+   LAYOUT: painel lateral com três abas (visão geral, projetos, perfil); no celular o painel vira faixa no topo. */
+body{margin:0;background:#ffffff;color:#121417;font-family:Montserrat,system-ui,sans-serif;font-size:16px;line-height:1.6}
+a{color:#8C6A2E}a:hover{color:#6b5021}
+h1,h2,h3{font-family:Montserrat,system-ui,sans-serif;text-wrap:balance}
 img{display:block;max-width:100%}
-button{font-family:inherit}
-button:focus-visible,a:focus-visible{outline:3px solid var(--vermelho);outline-offset:2px}
-.app{display:flex;flex-wrap:wrap;min-height:100vh;background:var(--fundo)}
-aside{flex:1 1 240px;background:var(--azul);color:#fff;padding:28px 20px;display:flex;flex-direction:column;gap:28px}
-.nome{display:block;font-size:22px;font-weight:700;line-height:1.15}
-.sub{display:block;margin-top:6px;font-size:14px;opacity:.8}
-.nav{display:flex;flex-wrap:wrap;gap:8px}
-.nav a{flex:1 1 170px;min-height:44px;display:flex;align-items:center;padding:10px 14px;font-size:15px;font-weight:600;color:#fff;background:rgba(255,255,255,.08);text-decoration:none}
-.nav a[aria-current="page"]{background:var(--vermelho)}
-.side-contact{margin-top:auto;display:flex;flex-direction:column;gap:6px;font-size:14px;border-top:1px solid rgba(255,255,255,.2);padding-top:18px}
-.side-contact a{color:#fff}
-@media (max-width:820px){.side-contact{display:none}}
-main{flex:999 1 560px;min-width:0}
-.view{display:none}.view.ativa{display:block}
-.sec{padding:32px clamp(16px,3vw,40px) 48px;max-width:1180px}
-.kicker{margin:0 0 6px;font-size:14px;font-weight:600;color:var(--vermelho)}
-.h1{margin:0;font-size:clamp(30px,3.6vw,42px);line-height:1.08}
-.lead{margin:8px 0 0;color:var(--cinza2);max-width:680px}
-.topo{display:flex;flex-wrap:wrap;gap:12px;align-items:flex-end;justify-content:space-between;margin-bottom:24px}
-.acoes{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
-.selo{background:#fff;border:1px solid var(--linha);padding:8px 14px;font-size:14px;font-weight:600}
-.btn{min-height:44px;display:inline-flex;align-items:center;padding:10px 18px;background:var(--vermelho);color:#fff;font-size:15px;font-weight:700;text-decoration:none}
-.btn:hover{color:#fff;background:#a51f1f}
-.card{background:#fff;border:1px solid var(--linha);padding:20px}
-.card-t{margin:0 0 14px;font-size:13px;font-weight:700;color:var(--cinza);letter-spacing:.02em}
-.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin-bottom:20px}
-.kpi b{display:block;font-size:34px;line-height:1;color:var(--vermelho)}
-.kpi strong{display:block;margin-top:8px;font-size:14px}
-.kpi span{display:block;font-size:13px;color:var(--cinza)}
-.cols{display:flex;flex-wrap:wrap;gap:20px;align-items:flex-start}
-.marcos a{display:flex;gap:14px;align-items:flex-start;border-top:1px solid var(--linha);padding:12px 4px;color:var(--azul);text-decoration:none;font-size:15px}
-.marcos a:hover{background:#f6f7f9}
-.quando{flex:0 0 64px;font-size:13px;font-weight:600;color:var(--cinza);white-space:nowrap}
-.marco-txt{flex:1 1 auto;min-width:0}.marco-txt strong{display:block}.marco-txt span{font-size:13px;color:var(--cinza)}
-.tag{flex:0 0 auto;font-size:12px;font-weight:600;padding:3px 10px;background:#e8eaf2;white-space:nowrap}
-.barra{display:flex;align-items:center;gap:10px;font-size:14px}
-.barra .rot{flex:0 0 118px}.barra .trilho{flex:1 1 auto;height:10px;background:#e8eaf2}.barra .trilho span{display:block;height:10px;background:var(--azul)}
-.barra .n{flex:0 0 18px;text-align:right;font-weight:700}
-.leg{display:inline-block;width:12px;height:12px;margin-right:8px;vertical-align:-1px}
-.num{display:inline-block;width:22px}
-.mx{width:100%;border-collapse:collapse;font-size:14px;min-width:560px}
-.mx td,.mx th{padding:10px 12px;border-bottom:1px solid var(--linha);text-align:center}
+.mx td,.mx th{padding:10px 12px;border-bottom:1px solid #E2E4E8;text-align:center}
 .mx td:first-child,.mx th:first-child{text-align:left}
-.mx th{font-weight:600;background:#f6f7f9}
 @media (max-width:640px){.mx{font-size:13px}.mx td,.mx th{padding:8px 6px}}
-.projetos{background:#fff;min-height:100vh;padding-bottom:64px}
-.indice{margin-top:20px;display:flex;flex-wrap:wrap;gap:8px}
-.indice a{padding:8px 12px;border:1px solid var(--borda);font-size:14px;font-weight:600;text-decoration:none}
-article{padding-top:48px;margin-top:72px;border-top:1px solid var(--linha);scroll-margin-top:12px}
-article:first-of-type{margin-top:8px;border-top:0}
-.art-k{margin:0 0 8px;font-size:15px;font-weight:600;color:var(--vermelho)}
-.art-h{margin:0;font-size:clamp(28px,3.4vw,40px);line-height:1.08}
-.ficha{margin:24px 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));border-top:2px solid var(--azul);border-bottom:1px solid var(--linha)}
-.ficha div{padding:14px 16px 14px 0}.ficha span{display:block;font-size:13px;color:var(--cinza)}.ficha strong{font-weight:600}
-.corpo{display:flex;flex-wrap:wrap;gap:40px;align-items:flex-start}
-.c1{flex:1 1 420px;min-width:0}.c2{flex:1 1 360px;min-width:0;display:flex;flex-direction:column;gap:16px}
-h3{margin:0 0 6px;font-size:18px}
-.c1 p{margin:0 0 20px}
-.c1 ul{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:6px}
-.fluxo{background:var(--fundo);padding:24px;display:flex;flex-direction:column;gap:10px}
-.mini{font-size:13px;font-weight:600;color:var(--cinza2)}
-.passo{background:#fff;border:1px solid var(--borda);padding:12px 14px}.passo span{font-size:14px;color:var(--cinza)}
-.passo.fim{background:var(--azul);color:#fff;border:0}.passo.fim span{color:#fff}
-.seta{text-align:center;color:var(--vermelho);font-size:18px;line-height:1}
-.destaque{border-left:3px solid var(--azul);padding:4px 0 4px 16px;font-size:15px}
-.tech{margin:0;font-size:14px;color:var(--cinza)}
-.nota{margin:0;font-size:13px;color:var(--cinza)}
-.nums{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--borda);border:1px solid var(--borda)}
-.nums div{background:#fff;padding:18px}.nums b{display:block;font-size:36px;line-height:1;color:var(--vermelho)}.nums span{font-size:14px;color:var(--cinza)}
-.escada{display:flex;gap:8px;flex-wrap:wrap}
-.degrau{flex:1 1 90px;background:#fff;border-top:4px solid var(--azul);padding:10px;font-size:14px}
-.degrau.crit{border-top-color:var(--vermelho)}.degrau.largo{flex:2 1 180px}
-figure{margin:0}figcaption{font-size:13px;color:var(--cinza);margin-top:6px}
-.fotos{margin-top:32px;display:flex;flex-wrap:wrap;gap:16px;align-items:flex-start}
-.borda-img{border:1px solid var(--azul)}
-.grafico{border:1px solid var(--linha);padding:12px;background:#fff}
-.texto p{margin:0 0 16px}
-.perfil-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
-.perfil-grid .card{display:flex;flex-direction:column;gap:6px}
-.perfil-grid .card .card-t{margin-bottom:8px}
+button{font-family:Montserrat,system-ui,sans-serif}
+button:focus-visible{outline:3px solid #8C6A2E;outline-offset:2px}
+.row:hover{background:#F2F3F5}
+@media (max-width:820px){.side-contact{display:none !important}}
 </style>
+<style>[hidden]{display:none !important}html{scroll-behavior:smooth}</style>
 </head>
 <body>
-<div class="app">
+<div style="display: flex; flex-wrap: wrap; min-height: 100vh; background: #F7F7F8">
 
-<aside>
+<aside style="flex: 1 1 240px; background: #2A2E35; color: #ffffff; padding: 28px 20px; display: flex; flex-direction: column; gap: 28px">
 <div>
-<span class="nome">Gabriel Magalhães Morais</span>
-<span class="sub">Engenharia de Produção · UFC</span>
+<span style="display: block; font-size: 22px; font-weight: 700; line-height: 1.15">Gabriel Magalhães Morais</span>
+<span style="display: block; margin-top: 6px; font-size: 14px; opacity: 0.8">Engenharia de Produção · UFC</span>
 </div>
-<nav class="nav" aria-label="Seções do portfólio">
-<a href="#visao-geral" data-view="visao-geral">Visão geral</a>
-<a href="#projetos" data-view="projetos">Projetos</a>
-<a href="#perfil" data-view="perfil">Perfil</a>
+<nav aria-label="Seções do portfólio" style="display: flex; flex-wrap: wrap; gap: 8px">
+<button type="button" data-nav="visao-geral" style="flex: 1 1 170px; min-height: 44px; text-align: left; padding: 10px 14px; border: 0; cursor: pointer; font-size: 15px; font-weight: 600; color: #ffffff; background: rgba(255,255,255,0.08)">Visão geral</button>
+<button type="button" data-nav="projetos" style="flex: 1 1 170px; min-height: 44px; text-align: left; padding: 10px 14px; border: 0; cursor: pointer; font-size: 15px; font-weight: 600; color: #ffffff; background: rgba(255,255,255,0.08)">Projetos</button>
+<button type="button" data-nav="perfil" style="flex: 1 1 170px; min-height: 44px; text-align: left; padding: 10px 14px; border: 0; cursor: pointer; font-size: 15px; font-weight: 600; color: #ffffff; background: rgba(255,255,255,0.08)">Perfil</button>
 </nav>
-<div class="side-contact">
-<span style="font-weight:600">Contato</span>
-<span style="overflow-wrap:anywhere">gm283027@gmail.com</span>
-<a href="https://www.linkedin.com/in/gabriel-magalh%C3%A3es-443759366" target="_blank" rel="noopener">Perfil no LinkedIn</a>
+<div class="side-contact" style="margin-top: auto; display: flex; flex-direction: column; gap: 6px; font-size: 14px; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 18px">
+<span style="font-weight: 600">Contato</span>
+<span style="overflow-wrap: anywhere">gm283027@gmail.com</span>
+<a href="https://www.linkedin.com/in/gabriel-magalh%C3%A3es-443759366" style="color: #ffffff; text-decoration: underline">Perfil no LinkedIn</a>
 </div>
 </aside>
 
-<main>
+<div style="flex: 999 1 560px; min-width: 0">
 
-<!-- VISÃO GERAL -->
-<section id="v-visao-geral" class="view sec" aria-labelledby="t-geral">
-<div class="topo">
+<div data-view="visao-geral">
+<section style="padding: 32px clamp(16px, 3vw, 40px) 48px; max-width: 1180px">
+<div style="display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-end; justify-content: space-between; margin-bottom: 24px">
 <div>
-<p class="kicker">Visão geral</p>
-<h1 id="t-geral" class="h1">Painel de carreira</h1>
-<p class="lead">Projetos, áreas de atuação e próximos marcos, de 2025 a novembro de 2026.</p>
+<p style="margin: 0 0 6px; font-size: 14px; font-weight: 600; color: #8C6A2E">Visão geral</p>
+<h1 style="margin: 0; font-size: clamp(30px, 3.6vw, 42px); line-height: 1.08">Painel de carreira</h1>
+<p style="margin: 8px 0 0; color: #3A3F47; max-width: 640px">Projetos, áreas de atuação e próximos marcos, de 2025 a novembro de 2026.</p>
 </div>
-<div class="acoes">
-<span class="selo">Atualizado em novembro de 2026</span>
-<a class="btn" href="#projetos">Ver projetos →</a>
-</div>
-</div>
-
-<div class="kpis">
-<div class="card kpi"><b>6</b><strong>projetos documentados</strong><span>3 concluídos</span></div>
-<div class="card kpi"><b>8</b><strong>versões do controle de desempenho</strong><span>melhoria contínua da ferramenta</span></div>
-<div class="card kpi"><b>30</b><strong>chaveiros</strong><span>vendidos ou distribuídos</span></div>
-<div class="card kpi"><b>118</b><strong>escolas analisadas</strong><span>estudo de eficiência (DEA)</span></div>
-<div class="card kpi"><b>70</b><strong>testes automatizados</strong><span>aplicativo de auditoria</span></div>
-</div>
-
-<div class="cols">
-<div class="card" style="flex:1.5 1 440px;min-width:0">
-<h2 class="card-t">Projetos e marcos</h2>
-<div class="marcos">
-<a href="#p2"><span class="quando">nov/2026</span><span class="marco-txt"><strong>Controle de desempenho, versão 8</strong><span>Plano de melhoria e diagnóstico do processo</span></span><span class="tag">Pessoas</span></a>
-<a href="#p1"><span class="quando">nov/2026</span><span class="marco-txt"><strong>Auditoria com IA, versão 2.4</strong><span>Aplicativo instalável, testado com posts reais</span></span><span class="tag">Qualidade</span></a>
-<a href="#p5"><span class="quando">nov/2026</span><span class="marco-txt"><strong>Canecas do CAEPRO</strong><span>Primeira demanda como diretor de marketing</span></span><span class="tag">Marketing</span></a>
-<a href="#p4"><span class="quando">set/2026</span><span class="marco-txt"><strong>Chaveiro Lappito em produção</strong><span>30 unidades vendidas ou distribuídas</span></span><span class="tag">Marketing</span></a>
-<a href="#perfil"><span class="quando">set/2026</span><span class="marco-txt"><strong>Diretoria de marketing do CAEPRO</strong><span>Início na função</span></span><span class="tag">Marketing</span></a>
-<a href="#p1"><span class="quando">jun/2026</span><span class="marco-txt"><strong>Auditoria com IA, primeira versão</strong><span>Protótipo em terminal</span></span><span class="tag">Processos</span></a>
-<a href="#p4"><span class="quando">jun/2026</span><span class="marco-txt"><strong>Chaveiro e porta-caneta LAPPI</strong><span>Ideia e design dos dois produtos</span></span><span class="tag">Projetos</span></a>
-<a href="#p3"><span class="quando">2025</span><span class="marco-txt"><strong>Eficiência das escolas profissionalizantes</strong><span>Trabalho acadêmico: 118 escolas, 4 cenários</span></span><span class="tag">Dados e análise</span></a>
+<div style="display: flex; flex-wrap: wrap; gap: 10px; align-items: center">
+<span style="background: #ffffff; border: 1px solid #E2E4E8; padding: 8px 14px; font-size: 14px; font-weight: 600">Atualizado em novembro de 2026</span>
+<button type="button" data-go-view="projetos" data-filter-set="todos" style="min-height: 44px; padding: 10px 18px; border: 0; background: #D4B07A; color: #121417; font-size: 15px; font-weight: 700; cursor: pointer">Ver projetos →</button>
 </div>
 </div>
 
-<div style="flex:1 1 300px;min-width:0;display:flex;flex-direction:column;gap:20px">
-<div class="card">
-<h2 class="card-t">Projetos por área</h2>
-<div style="display:flex;flex-direction:column;gap:10px">
-<div class="barra" role="img" aria-label="Dados e análise: 3 projetos"><span class="rot" aria-hidden="true">Dados e análise</span><span class="trilho" aria-hidden="true"><span style="width:50%;background:var(--vermelho)"></span></span><span class="n" aria-hidden="true">3</span></div>
-<div class="barra" role="img" aria-label="Qualidade: 2 projetos"><span class="rot" aria-hidden="true">Qualidade</span><span class="trilho" aria-hidden="true"><span style="width:33%"></span></span><span class="n" aria-hidden="true">2</span></div>
-<div class="barra" role="img" aria-label="Processos: 3 projetos"><span class="rot" aria-hidden="true">Processos</span><span class="trilho" aria-hidden="true"><span style="width:50%"></span></span><span class="n" aria-hidden="true">3</span></div>
-<div class="barra" role="img" aria-label="Pessoas: 1 projeto"><span class="rot" aria-hidden="true">Pessoas</span><span class="trilho" aria-hidden="true"><span style="width:17%"></span></span><span class="n" aria-hidden="true">1</span></div>
-<div class="barra" role="img" aria-label="Marketing: 3 projetos"><span class="rot" aria-hidden="true">Marketing</span><span class="trilho" aria-hidden="true"><span style="width:50%"></span></span><span class="n" aria-hidden="true">3</span></div>
-<div class="barra" role="img" aria-label="Projetos: 3 projetos"><span class="rot" aria-hidden="true">Projetos</span><span class="trilho" aria-hidden="true"><span style="width:50%"></span></span><span class="n" aria-hidden="true">3</span></div>
-</div>
-<p style="margin:12px 0 0;font-size:12px;color:var(--cinza)">Um projeto pode cobrir mais de uma área.</p>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; margin-bottom: 20px">
+<div style="background: #ffffff; border: 1px solid #E2E4E8; padding: 20px"><span style="display: block; font-size: 34px; font-weight: 700; line-height: 1; color: #8C6A2E">6</span><span style="display: block; margin-top: 8px; font-size: 14px; font-weight: 600">projetos documentados</span><span style="display: block; font-size: 13px; color: #5B616B">3 concluídos</span></div>
+<div style="background: #ffffff; border: 1px solid #E2E4E8; padding: 20px"><span style="display: block; font-size: 34px; font-weight: 700; line-height: 1; color: #8C6A2E">8</span><span style="display: block; margin-top: 8px; font-size: 14px; font-weight: 600">versões do controle de desempenho</span><span style="display: block; font-size: 13px; color: #5B616B">melhoria contínua da ferramenta</span></div>
+<div style="background: #ffffff; border: 1px solid #E2E4E8; padding: 20px"><span style="display: block; font-size: 34px; font-weight: 700; line-height: 1; color: #8C6A2E">30</span><span style="display: block; margin-top: 8px; font-size: 14px; font-weight: 600">chaveiros</span><span style="display: block; font-size: 13px; color: #5B616B">vendidos ou distribuídos</span></div>
+<div style="background: #ffffff; border: 1px solid #E2E4E8; padding: 20px"><span style="display: block; font-size: 34px; font-weight: 700; line-height: 1; color: #8C6A2E">118</span><span style="display: block; margin-top: 8px; font-size: 14px; font-weight: 600">escolas analisadas</span><span style="display: block; font-size: 13px; color: #5B616B">estudo de eficiência (DEA)</span></div>
+<div style="background: #ffffff; border: 1px solid #E2E4E8; padding: 20px"><span style="display: block; font-size: 34px; font-weight: 700; line-height: 1; color: #8C6A2E">70</span><span style="display: block; margin-top: 8px; font-size: 14px; font-weight: 600">testes automatizados</span><span style="display: block; font-size: 13px; color: #5B616B">aplicativo de auditoria</span></div>
 </div>
 
-<div class="card">
-<h2 class="card-t">Situação dos projetos</h2>
-<div aria-hidden="true" style="display:flex;height:12px;gap:2px;margin-bottom:14px"><span style="flex:3;background:var(--azul)"></span><span style="flex:2;background:var(--vermelho)"></span><span style="flex:1;background:#b8bdd0"></span></div>
-<div style="display:flex;flex-direction:column;gap:8px;font-size:14px">
-<span><span class="leg" aria-hidden="true" style="background:var(--azul)"></span><strong class="num">3</strong>Concluídos: controle de desempenho, DEA e chaveiro</span>
-<span><span class="leg" aria-hidden="true" style="background:var(--vermelho)"></span><strong class="num">2</strong>Em andamento: auditoria com IA e canecas</span>
-<span><span class="leg" aria-hidden="true" style="background:#b8bdd0"></span><strong class="num">1</strong>Conceito: porta-caneta</span>
+<div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-start">
+<div style="flex: 1.5 1 440px; min-width: 0; background: #ffffff; border: 1px solid #E2E4E8; padding: 20px">
+<h2 style="margin: 0 0 14px; font-size: 13px; font-weight: 700; color: #5B616B; letter-spacing: 0.02em">Projetos e marcos</h2>
+<div style="display: flex; flex-direction: column">
+<button type="button" class="row" data-go="p2" style="display: flex; gap: 14px; align-items: flex-start; width: 100%; text-align: left; background: transparent; border: 0; border-top: 1px solid #E2E4E8; padding: 12px 4px; color: #121417; cursor: pointer; font-size: 15px">
+<span style="flex: 0 0 64px; font-size: 13px; font-weight: 600; color: #5B616B; white-space: nowrap">nov/2026</span>
+<span style="flex: 1 1 auto; min-width: 0"><strong style="display: block">Controle de desempenho, versão 8</strong><span style="font-size: 13px; color: #5B616B">Plano de melhoria e diagnóstico do processo</span></span>
+<span style="flex: 0 0 auto; font-size: 12px; font-weight: 600; padding: 3px 10px; background: #ECEDEF; white-space: nowrap">Pessoas</span>
+</button>
+<button type="button" class="row" data-go="p1" style="display: flex; gap: 14px; align-items: flex-start; width: 100%; text-align: left; background: transparent; border: 0; border-top: 1px solid #E2E4E8; padding: 12px 4px; color: #121417; cursor: pointer; font-size: 15px">
+<span style="flex: 0 0 64px; font-size: 13px; font-weight: 600; color: #5B616B; white-space: nowrap">nov/2026</span>
+<span style="flex: 1 1 auto; min-width: 0"><strong style="display: block">Auditoria com IA, versão 2.4</strong><span style="font-size: 13px; color: #5B616B">Aplicativo instalável, testado com posts reais</span></span>
+<span style="flex: 0 0 auto; font-size: 12px; font-weight: 600; padding: 3px 10px; background: #ECEDEF; white-space: nowrap">Qualidade</span>
+</button>
+<button type="button" class="row" data-go="p4" style="display: flex; gap: 14px; align-items: flex-start; width: 100%; text-align: left; background: transparent; border: 0; border-top: 1px solid #E2E4E8; padding: 12px 4px; color: #121417; cursor: pointer; font-size: 15px">
+<span style="flex: 0 0 64px; font-size: 13px; font-weight: 600; color: #5B616B; white-space: nowrap">nov/2026</span>
+<span style="flex: 1 1 auto; min-width: 0"><strong style="display: block">Canecas do CAEPRO</strong><span style="font-size: 13px; color: #5B616B">Primeira demanda como diretor de marketing</span></span>
+<span style="flex: 0 0 auto; font-size: 12px; font-weight: 600; padding: 3px 10px; background: #ECEDEF; white-space: nowrap">Marketing</span>
+</button>
+<button type="button" class="row" data-go="p3" style="display: flex; gap: 14px; align-items: flex-start; width: 100%; text-align: left; background: transparent; border: 0; border-top: 1px solid #E2E4E8; padding: 12px 4px; color: #121417; cursor: pointer; font-size: 15px">
+<span style="flex: 0 0 64px; font-size: 13px; font-weight: 600; color: #5B616B; white-space: nowrap">set/2026</span>
+<span style="flex: 1 1 auto; min-width: 0"><strong style="display: block">Chaveiro Lappito em produção</strong><span style="font-size: 13px; color: #5B616B">30 unidades vendidas ou distribuídas</span></span>
+<span style="flex: 0 0 auto; font-size: 12px; font-weight: 600; padding: 3px 10px; background: #ECEDEF; white-space: nowrap">Marketing</span>
+</button>
+<button type="button" class="row" data-go-view="perfil" style="display: flex; gap: 14px; align-items: flex-start; width: 100%; text-align: left; background: transparent; border: 0; border-top: 1px solid #E2E4E8; padding: 12px 4px; color: #121417; cursor: pointer; font-size: 15px">
+<span style="flex: 0 0 64px; font-size: 13px; font-weight: 600; color: #5B616B; white-space: nowrap">set/2026</span>
+<span style="flex: 1 1 auto; min-width: 0"><strong style="display: block">Diretoria de marketing do CAEPRO</strong><span style="font-size: 13px; color: #5B616B">Início na função</span></span>
+<span style="flex: 0 0 auto; font-size: 12px; font-weight: 600; padding: 3px 10px; background: #ECEDEF; white-space: nowrap">Marketing</span>
+</button>
+<button type="button" class="row" data-go="p1" style="display: flex; gap: 14px; align-items: flex-start; width: 100%; text-align: left; background: transparent; border: 0; border-top: 1px solid #E2E4E8; padding: 12px 4px; color: #121417; cursor: pointer; font-size: 15px">
+<span style="flex: 0 0 64px; font-size: 13px; font-weight: 600; color: #5B616B; white-space: nowrap">jun/2026</span>
+<span style="flex: 1 1 auto; min-width: 0"><strong style="display: block">Auditoria com IA, primeira versão</strong><span style="font-size: 13px; color: #5B616B">Protótipo em terminal</span></span>
+<span style="flex: 0 0 auto; font-size: 12px; font-weight: 600; padding: 3px 10px; background: #ECEDEF; white-space: nowrap">Processos</span>
+</button>
+<button type="button" class="row" data-go="p3" style="display: flex; gap: 14px; align-items: flex-start; width: 100%; text-align: left; background: transparent; border: 0; border-top: 1px solid #E2E4E8; padding: 12px 4px; color: #121417; cursor: pointer; font-size: 15px">
+<span style="flex: 0 0 64px; font-size: 13px; font-weight: 600; color: #5B616B; white-space: nowrap">jun/2026</span>
+<span style="flex: 1 1 auto; min-width: 0"><strong style="display: block">Chaveiro e porta-caneta LAPPI</strong><span style="font-size: 13px; color: #5B616B">Ideia e design dos dois produtos</span></span>
+<span style="flex: 0 0 auto; font-size: 12px; font-weight: 600; padding: 3px 10px; background: #ECEDEF; white-space: nowrap">Gestão de projetos</span>
+</button>
+<button type="button" class="row" data-go="p6" style="display: flex; gap: 14px; align-items: flex-start; width: 100%; text-align: left; background: transparent; border: 0; border-top: 1px solid #E2E4E8; padding: 12px 4px; color: #121417; cursor: pointer; font-size: 15px">
+<span style="flex: 0 0 64px; font-size: 13px; font-weight: 600; color: #5B616B; white-space: nowrap">2025</span>
+<span style="flex: 1 1 auto; min-width: 0"><strong style="display: block">Eficiência das escolas profissionalizantes</strong><span style="font-size: 13px; color: #5B616B">Trabalho acadêmico: 118 escolas, 4 cenários</span></span>
+<span style="flex: 0 0 auto; font-size: 12px; font-weight: 600; padding: 3px 10px; background: #ECEDEF; white-space: nowrap">Dados e análise</span>
+</button>
 </div>
 </div>
 
-<div class="card">
-<h2 class="card-t">Próximos marcos</h2>
-<div style="display:flex;flex-direction:column;gap:10px;font-size:14px">
-<span><strong style="display:inline-block;width:78px">dez/2026</strong>Manual oficial da auditoria com o Marketing</span>
-<span><strong style="display:inline-block;width:78px">fev/2027</strong>Piloto da auditoria com os designers</span>
-<span><strong style="display:inline-block;width:78px">mar/2027</strong>Auditoria em uso no LAPPI</span>
-<span><strong style="display:inline-block;width:78px">2027</strong>Implantação do controle de desempenho</span>
+<div style="flex: 1 1 300px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+<div style="background: #ffffff; border: 1px solid #E2E4E8; padding: 20px">
+<h2 style="margin: 0 0 14px; font-size: 13px; font-weight: 700; color: #5B616B; letter-spacing: 0.02em">Projetos por área</h2>
+<div style="display: flex; flex-direction: column; gap: 10px">
+<button type="button" class="row" data-filter-go="Dados e análise" aria-label="Dados e análise: 3 projetos. Ver projetos desta área" style="display: flex; align-items: center; gap: 10px; width: 100%; min-height: 32px; padding: 4px 2px; border: 0; background: transparent; color: #121417; text-align: left; font-size: 14px; cursor: pointer">
+<span aria-hidden="true" style="flex: 0 0 140px">Dados e análise</span>
+<span aria-hidden="true" style="flex: 1 1 auto; height: 10px; background: #ECEDEF"><span style="display: block; height: 10px; width: 50%; background: #8C6A2E"></span></span>
+<span aria-hidden="true" style="flex: 0 0 18px; text-align: right; font-weight: 700">3</span>
+</button>
+<button type="button" class="row" data-filter-go="Qualidade" aria-label="Qualidade: 2 projetos. Ver projetos desta área" style="display: flex; align-items: center; gap: 10px; width: 100%; min-height: 32px; padding: 4px 2px; border: 0; background: transparent; color: #121417; text-align: left; font-size: 14px; cursor: pointer">
+<span aria-hidden="true" style="flex: 0 0 140px">Qualidade</span>
+<span aria-hidden="true" style="flex: 1 1 auto; height: 10px; background: #ECEDEF"><span style="display: block; height: 10px; width: 33%; background: #8C6A2E"></span></span>
+<span aria-hidden="true" style="flex: 0 0 18px; text-align: right; font-weight: 700">2</span>
+</button>
+<button type="button" class="row" data-filter-go="Processos" aria-label="Processos: 3 projetos. Ver projetos desta área" style="display: flex; align-items: center; gap: 10px; width: 100%; min-height: 32px; padding: 4px 2px; border: 0; background: transparent; color: #121417; text-align: left; font-size: 14px; cursor: pointer">
+<span aria-hidden="true" style="flex: 0 0 140px">Processos</span>
+<span aria-hidden="true" style="flex: 1 1 auto; height: 10px; background: #ECEDEF"><span style="display: block; height: 10px; width: 50%; background: #8C6A2E"></span></span>
+<span aria-hidden="true" style="flex: 0 0 18px; text-align: right; font-weight: 700">3</span>
+</button>
+<button type="button" class="row" data-filter-go="Pessoas" aria-label="Pessoas: 1 projeto. Ver projetos desta área" style="display: flex; align-items: center; gap: 10px; width: 100%; min-height: 32px; padding: 4px 2px; border: 0; background: transparent; color: #121417; text-align: left; font-size: 14px; cursor: pointer">
+<span aria-hidden="true" style="flex: 0 0 140px">Pessoas</span>
+<span aria-hidden="true" style="flex: 1 1 auto; height: 10px; background: #ECEDEF"><span style="display: block; height: 10px; width: 17%; background: #8C6A2E"></span></span>
+<span aria-hidden="true" style="flex: 0 0 18px; text-align: right; font-weight: 700">1</span>
+</button>
+<button type="button" class="row" data-filter-go="Marketing" aria-label="Marketing: 3 projetos. Ver projetos desta área" style="display: flex; align-items: center; gap: 10px; width: 100%; min-height: 32px; padding: 4px 2px; border: 0; background: transparent; color: #121417; text-align: left; font-size: 14px; cursor: pointer">
+<span aria-hidden="true" style="flex: 0 0 140px">Marketing</span>
+<span aria-hidden="true" style="flex: 1 1 auto; height: 10px; background: #ECEDEF"><span style="display: block; height: 10px; width: 50%; background: #8C6A2E"></span></span>
+<span aria-hidden="true" style="flex: 0 0 18px; text-align: right; font-weight: 700">3</span>
+</button>
+<button type="button" class="row" data-filter-go="Gestão de projetos" aria-label="Gestão de projetos: 3 projetos. Ver projetos desta área" style="display: flex; align-items: center; gap: 10px; width: 100%; min-height: 32px; padding: 4px 2px; border: 0; background: transparent; color: #121417; text-align: left; font-size: 14px; cursor: pointer">
+<span aria-hidden="true" style="flex: 0 0 140px">Gestão de projetos</span>
+<span aria-hidden="true" style="flex: 1 1 auto; height: 10px; background: #ECEDEF"><span style="display: block; height: 10px; width: 50%; background: #8C6A2E"></span></span>
+<span aria-hidden="true" style="flex: 0 0 18px; text-align: right; font-weight: 700">3</span>
+</button>
+</div>
+<p style="margin: 12px 0 0; font-size: 12px; color: #5B616B">Um projeto pode cobrir mais de uma área. Clique numa barra para ver os projetos dela.</p>
+</div>
+
+<div style="background: #ffffff; border: 1px solid #E2E4E8; padding: 20px">
+<h2 style="margin: 0 0 14px; font-size: 13px; font-weight: 700; color: #5B616B; letter-spacing: 0.02em">Situação dos projetos</h2>
+<div aria-hidden="true" style="display: flex; height: 12px; gap: 2px; margin-bottom: 14px">
+<span style="flex: 3; background: #2A2E35"></span><span style="flex: 2; background: #D4B07A"></span><span style="flex: 1; background: #C8CCD2"></span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px; font-size: 14px">
+<span><span aria-hidden="true" style="display: inline-block; width: 12px; height: 12px; margin-right: 8px; vertical-align: -1px; background: #2A2E35"></span><strong style="display: inline-block; width: 22px">3</strong>Concluídos: controle de desempenho, DEA e chaveiro</span>
+<span><span aria-hidden="true" style="display: inline-block; width: 12px; height: 12px; margin-right: 8px; vertical-align: -1px; background: #D4B07A"></span><strong style="display: inline-block; width: 22px">2</strong>Em andamento: auditoria com IA e canecas</span>
+<span><span aria-hidden="true" style="display: inline-block; width: 12px; height: 12px; margin-right: 8px; vertical-align: -1px; background: #C8CCD2"></span><strong style="display: inline-block; width: 22px">1</strong>Conceito: porta-caneta</span>
+</div>
+</div>
+
+<div style="background: #ffffff; border: 1px solid #E2E4E8; padding: 20px">
+<h2 style="margin: 0 0 14px; font-size: 13px; font-weight: 700; color: #5B616B; letter-spacing: 0.02em">Próximos marcos</h2>
+<div style="display: flex; flex-direction: column; gap: 10px; font-size: 14px">
+<span><strong style="display: inline-block; width: 78px">dez/2026</strong>Manual oficial da auditoria com o Marketing</span>
+<span><strong style="display: inline-block; width: 78px">fev/2027</strong>Piloto da auditoria com os designers</span>
+<span><strong style="display: inline-block; width: 78px">mar/2027</strong>Auditoria em uso no LAPPI</span>
+<span><strong style="display: inline-block; width: 78px">2027</strong>Implantação do controle de desempenho</span>
 </div>
 </div>
 </div>
 </div>
 
-<div class="card" style="margin-top:20px">
-<h2 class="card-t">Áreas em cada projeto</h2>
-<div style="overflow-x:auto">
-<table class="mx">
-<thead><tr><th>Projeto</th><th>Dados e análise</th><th>Qualidade</th><th>Processos</th><th>Pessoas</th><th>Marketing</th><th>Projetos</th></tr></thead>
+<div style="margin-top: 20px; background: #ffffff; border: 1px solid #E2E4E8; padding: 20px">
+<h2 style="margin: 0 0 14px; font-size: 13px; font-weight: 700; color: #5B616B; letter-spacing: 0.02em">Áreas em cada projeto</h2>
+<div style="overflow-x: auto">
+<table class="mx" style="width: 100%; border-collapse: collapse; font-size: 14px; min-width: 560px">
+<thead>
+<tr style="background: #F2F3F5"><th style="font-weight: 600">Projeto</th><th style="font-weight: 600">Dados e análise</th><th style="font-weight: 600">Qualidade</th><th style="font-weight: 600">Processos</th><th style="font-weight: 600">Pessoas</th><th style="font-weight: 600">Marketing</th><th style="font-weight: 600">Gestão de projetos</th></tr>
+</thead>
 <tbody>
 <tr><td>Auditoria de identidade visual com IA</td><td>●</td><td>●</td><td>●</td><td></td><td>●</td><td>●</td></tr>
 <tr><td>Controle de desempenho dos membros</td><td>●</td><td>●</td><td>●</td><td>●</td><td></td><td></td></tr>
@@ -212,38 +199,54 @@ figure{margin:0}figcaption{font-size:13px;color:var(--cinza);margin-top:6px}
 </div>
 </div>
 </section>
-
-<!-- PROJETOS -->
-<section id="v-projetos" class="view projetos" aria-labelledby="t-projetos">
-<div class="sec" style="max-width:1160px;padding-bottom:0">
-<p class="kicker">Projetos</p>
-<h1 id="t-projetos" class="h1">Seis projetos, do problema ao resultado</h1>
-<p class="lead">Em todos eles, o ponto de partida foi um problema concreto, e a resposta foi uma estrutura que funciona independentemente de quem a opera.</p>
-<nav class="indice" aria-label="Índice dos projetos">
-<a href="#p1">1. Auditoria com IA</a>
-<a href="#p2">2. Controle de desempenho</a>
-<a href="#p3">3. Eficiência das escolas (DEA)</a>
-<a href="#p4">4. Chaveiro Lappito</a>
-<a href="#p5">5. Canecas do CAEPRO</a>
-<a href="#p6">6. Porta-caneta (conceito)</a>
-</nav>
-
-<article id="p1">
-<p class="art-k">Projeto 1 · LAPPI/UFC</p>
-<h2 class="art-h">Sistema de auditoria de identidade visual com IA</h2>
-<div class="ficha">
-<div><span>Papel</span><strong>Idealização e desenvolvimento, individual</strong></div>
-<div><span>Período</span><strong>Junho a novembro de 2026</strong></div>
-<div><span>Situação</span><strong>Em implantação; uso previsto para março de 2027</strong></div>
 </div>
-<div class="corpo">
-<div class="c1">
-<h3>Problema</h3>
-<p>O laboratório segue muitas regras de identidade visual, e o rigor da fiscalização das publicações variava conforme a coordenação. A cada troca de coordenador, o padrão podia cair, e a aprovação dependia de uma única pessoa.</p>
-<h3>Solução</h3>
-<p>Aplicativo de Windows, conhecido internamente como Lappito, que audita os carrosséis do Instagram contra as 15 regras do manual de postagem antes da publicação. O sistema cuida apenas do que é regra objetiva, como formato, cores, estrutura e ortografia; o processo criativo permanece com a equipe.</p>
-<h3>Decisões técnicas</h3>
-<ul>
+
+<div data-view="projetos" hidden>
+<section style="padding: 32px clamp(16px, 3vw, 40px) 64px; background: #ffffff; min-height: 100vh">
+<div style="max-width: 1120px">
+<p style="margin: 0 0 6px; font-size: 14px; font-weight: 600; color: #8C6A2E">Projetos</p>
+<h1 style="margin: 0; font-size: clamp(30px, 3.6vw, 42px); line-height: 1.08">Seis projetos, do problema ao resultado</h1>
+<p style="margin: 8px 0 0; color: #3A3F47; max-width: 680px">Em todos eles, o ponto de partida foi um problema concreto, e a resposta foi uma estrutura que funciona independentemente de quem a opera.</p>
+<div style="margin-top: 24px; padding: 16px; background: #F7F7F8">
+<span id="filtro-titulo" style="display: block; margin-bottom: 10px; font-size: 13px; font-weight: 700; color: #5B616B">Filtrar por área</span>
+<div role="group" aria-labelledby="filtro-titulo" style="display: flex; flex-wrap: wrap; gap: 8px">
+<button type="button" data-filter="todos" aria-pressed="false" style="min-height: 44px; padding: 8px 14px; border: 1px solid #C8CCD2; background: #ffffff; color: #121417; font-size: 14px; font-weight: 600; cursor: pointer">Todos <span style="font-weight: 500; opacity: 0.85">(6)</span></button>
+<button type="button" data-filter="Dados e análise" aria-pressed="false" style="min-height: 44px; padding: 8px 14px; border: 1px solid #C8CCD2; background: #ffffff; color: #121417; font-size: 14px; font-weight: 600; cursor: pointer">Dados e análise <span style="font-weight: 500; opacity: 0.85">(3)</span></button>
+<button type="button" data-filter="Qualidade" aria-pressed="false" style="min-height: 44px; padding: 8px 14px; border: 1px solid #C8CCD2; background: #ffffff; color: #121417; font-size: 14px; font-weight: 600; cursor: pointer">Qualidade <span style="font-weight: 500; opacity: 0.85">(2)</span></button>
+<button type="button" data-filter="Processos" aria-pressed="false" style="min-height: 44px; padding: 8px 14px; border: 1px solid #C8CCD2; background: #ffffff; color: #121417; font-size: 14px; font-weight: 600; cursor: pointer">Processos <span style="font-weight: 500; opacity: 0.85">(3)</span></button>
+<button type="button" data-filter="Pessoas" aria-pressed="false" style="min-height: 44px; padding: 8px 14px; border: 1px solid #C8CCD2; background: #ffffff; color: #121417; font-size: 14px; font-weight: 600; cursor: pointer">Pessoas <span style="font-weight: 500; opacity: 0.85">(1)</span></button>
+<button type="button" data-filter="Marketing" aria-pressed="false" style="min-height: 44px; padding: 8px 14px; border: 1px solid #C8CCD2; background: #ffffff; color: #121417; font-size: 14px; font-weight: 600; cursor: pointer">Marketing <span style="font-weight: 500; opacity: 0.85">(3)</span></button>
+<button type="button" data-filter="Gestão de projetos" aria-pressed="false" style="min-height: 44px; padding: 8px 14px; border: 1px solid #C8CCD2; background: #ffffff; color: #121417; font-size: 14px; font-weight: 600; cursor: pointer">Gestão de projetos <span style="font-weight: 500; opacity: 0.85">(3)</span></button>
+</div>
+<p id="resumo-filtro" aria-live="polite" style="margin: 12px 0 0; font-size: 14px; color: #3A3F47">Mostrando os 6 projetos.</p>
+</div>
+<nav aria-label="Índice dos projetos" style="margin-top: 16px; display: flex; flex-wrap: wrap; gap: 8px">
+<a data-idx="p1" href="#p1" style="padding: 8px 12px; border: 1px solid #C8CCD2; font-size: 14px; font-weight: 600; text-decoration: none">1. Auditoria com IA</a>
+<a data-idx="p2" href="#p2" style="padding: 8px 12px; border: 1px solid #C8CCD2; font-size: 14px; font-weight: 600; text-decoration: none">2. Controle de desempenho</a>
+<a data-idx="p6" href="#p6" style="padding: 8px 12px; border: 1px solid #C8CCD2; font-size: 14px; font-weight: 600; text-decoration: none">3. Eficiência das escolas (DEA)</a>
+<a data-idx="p3" href="#p3" style="padding: 8px 12px; border: 1px solid #C8CCD2; font-size: 14px; font-weight: 600; text-decoration: none">4. Chaveiro Lappito</a>
+<a data-idx="p4" href="#p4" style="padding: 8px 12px; border: 1px solid #C8CCD2; font-size: 14px; font-weight: 600; text-decoration: none">5. Canecas do CAEPRO</a>
+<a data-idx="p5" href="#p5" style="padding: 8px 12px; border: 1px solid #C8CCD2; font-size: 14px; font-weight: 600; text-decoration: none">6. Porta-caneta (conceito)</a>
+</nav>
+<div style="display: flex; flex-direction: column; gap: 56px; margin-top: 8px">
+<div data-proj="p1" data-areas="Dados e análise|Qualidade|Processos|Marketing|Gestão de projetos">
+<article id="p1" style="padding-top: 48px; border-top: 1px solid #E2E4E8">
+<p style="margin: 0 0 8px; font-size: 15px; font-weight: 600; color: #8C6A2E">Projeto 1 · LAPPI/UFC</p>
+<h2 style="margin: 0; font-size: clamp(28px, 3.4vw, 40px); line-height: 1.08">Sistema de auditoria de identidade visual com IA</h2>
+<div style="margin-top: 12px; display: flex; flex-wrap: wrap; gap: 6px"><span style="font-size: 12px; font-weight: 600; padding: 3px 10px; background: #ECEDEF">Dados e análise</span><span style="font-size: 12px; font-weight: 600; padding: 3px 10px; background: #ECEDEF">Qualidade</span><span style="font-size: 12px; font-weight: 600; padding: 3px 10px; background: #ECEDEF">Processos</span><span style="font-size: 12px; font-weight: 600; padding: 3px 10px; background: #ECEDEF">Marketing</span><span style="font-size: 12px; font-weight: 600; padding: 3px 10px; background: #ECEDEF">Gestão de projetos</span></div>
+<div style="margin: 24px 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); border-top: 2px solid #121417; border-bottom: 1px solid #E2E4E8">
+<div style="padding: 14px 16px 14px 0"><span style="display: block; font-size: 13px; color: #5B616B">Papel</span><span style="font-weight: 600">Idealização e desenvolvimento, individual</span></div>
+<div style="padding: 14px 16px 14px 0"><span style="display: block; font-size: 13px; color: #5B616B">Período</span><span style="font-weight: 600">Junho a novembro de 2026</span></div>
+<div style="padding: 14px 16px 14px 0"><span style="display: block; font-size: 13px; color: #5B616B">Situação</span><span style="font-weight: 600">Em implantação; uso previsto para março de 2027</span></div>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 40px">
+<div style="flex: 1 1 420px; min-width: 0">
+<h3 style="margin: 0 0 6px; font-size: 18px">Problema</h3>
+<p style="margin: 0 0 20px">O laboratório segue muitas regras de identidade visual, e o rigor da fiscalização das publicações variava conforme a coordenação. A cada troca de coordenador, o padrão podia cair, e a aprovação dependia de uma única pessoa.</p>
+<h3 style="margin: 0 0 6px; font-size: 18px">Solução</h3>
+<p style="margin: 0 0 20px">Aplicativo de Windows, conhecido internamente como Lappito, que audita os carrosséis do Instagram contra as 15 regras do manual de postagem antes da publicação. O sistema cuida apenas do que é regra objetiva, como formato, cores, estrutura e ortografia; o processo criativo permanece com a equipe.</p>
+<h3 style="margin: 0 0 6px; font-size: 18px">Decisões técnicas</h3>
+<ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px">
 <li>O que pode ser medido é medido por código, e esse resultado prevalece sobre o da IA; cores são comparadas no espaço Lab (ΔE).</li>
 <li>O veredito é calculado pelo código, a partir de respostas da IA em formato estruturado e validado.</li>
 <li>Reauditoria por rodadas: a partir da segunda, o sistema confere apenas o que falhou e o que a correção pode ter afetado.</li>
@@ -251,43 +254,48 @@ figure{margin:0}figcaption{font-size:13px;color:var(--cinza);margin-top:6px}
 <li>Regras em arquivo de configuração, modelo de IA reserva e 70 testes automatizados.</li>
 </ul>
 </div>
-<div class="c2">
-<div class="fluxo">
-<span class="mini">Fluxo de uma auditoria</span>
-<div class="passo"><strong>1. Slides do post</strong><br><span>Imagens do carrossel, em ordem</span></div>
-<span class="seta" aria-hidden="true">↓</span>
-<div class="passo"><strong>2. Medição por código</strong><br><span>Tamanho, cor, nº de slides, fundos</span></div>
-<span class="seta" aria-hidden="true">↓</span>
-<div class="passo"><strong>3. Avaliação por IA</strong><br><span>Logotipo, contraste, estrutura, ortografia</span></div>
-<span class="seta" aria-hidden="true">↓</span>
-<div class="passo fim"><strong>4. Veredito e relatório</strong><br><span>Aprovado ou ajustar, com o que corrigir</span></div>
+<div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+<div style="background: #F7F7F8; padding: 24px; display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 13px; font-weight: 600; color: #3A3F47">Fluxo de uma auditoria</span>
+<div style="background: #ffffff; border: 1px solid #C8CCD2; padding: 12px 14px"><strong>1. Slides do post</strong><br><span style="font-size: 14px; color: #5B616B">Imagens do carrossel, em ordem</span></div>
+<span aria-hidden="true" style="text-align: center; color: #8C6A2E; font-size: 18px; line-height: 1">↓</span>
+<div style="background: #ffffff; border: 1px solid #C8CCD2; padding: 12px 14px"><strong>2. Medição por código</strong><br><span style="font-size: 14px; color: #5B616B">Tamanho, cor, nº de slides, fundos</span></div>
+<span aria-hidden="true" style="text-align: center; color: #8C6A2E; font-size: 18px; line-height: 1">↓</span>
+<div style="background: #ffffff; border: 1px solid #C8CCD2; padding: 12px 14px"><strong>3. Avaliação por IA</strong><br><span style="font-size: 14px; color: #5B616B">Logotipo, contraste, estrutura, ortografia</span></div>
+<span aria-hidden="true" style="text-align: center; color: #8C6A2E; font-size: 18px; line-height: 1">↓</span>
+<div style="background: #2A2E35; color: #ffffff; padding: 12px 14px"><strong>4. Veredito e relatório</strong><br><span style="font-size: 14px">Aprovado ou ajustar, com o que corrigir</span></div>
 </div>
-<div class="destaque"><strong>Teste com post real:</strong> no carrossel do Processo Seletivo, o sistema reprovou o formato dos seis slides por medição exata e apontou seis erros de ortografia, cada um com a correção indicada.</div>
-<p class="tech">Python · Google Gemini API · Pillow · Pydantic · pywebview · unittest</p>
+<div style="border-left: 3px solid #121417; padding: 4px 0 4px 16px; font-size: 15px">
+<strong>Teste com post real:</strong> no carrossel do Processo Seletivo, o sistema reprovou o formato dos seis slides por medição exata e apontou seis erros de ortografia, cada um com a correção indicada.
+</div>
+<p style="margin: 0; font-size: 14px; color: #5B616B">Python · Google Gemini API · Pillow · Pydantic · pywebview · unittest</p>
 </div>
 </div>
-<div class="fotos">
-<figure style="flex:1.6 1 480px;min-width:0"><img class="borda-img" src="img/lappito-tela-inicial.png" width="1799" height="760" loading="lazy" alt="Tela inicial do aplicativo Lappito, com o mascote, a área para anexar os slides e o histórico de peças auditadas" style="width:100%;height:auto"><figcaption>Tela inicial do aplicativo (versão 2.4)</figcaption></figure>
-<figure style="flex:1 1 320px;min-width:0"><img class="borda-img" src="img/lappito-relatorio.png" width="1119" height="845" loading="lazy" alt="Relatório de uma reauditoria: veredito Ajustar, regras resolvidas, pendentes e erro novo, com as correções críticas primeiro" style="width:100%;height:auto"><figcaption>Relatório da 2ª rodada: o que foi resolvido, o que segue pendente e o que surgiu de novo</figcaption></figure>
+<div style="margin-top: 32px; display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-start">
+<figure style="margin: 0; flex: 1.6 1 480px; min-width: 0"><img src="img/lappito-tela-inicial.png" alt="Tela inicial do aplicativo Lappito, com o mascote, a área para anexar os slides e o histórico de peças auditadas" style="width: 100%; aspect-ratio: 1799 / 760; object-fit: cover; border: 1px solid #121417"><figcaption style="font-size: 13px; color: #5B616B; margin-top: 6px">Tela inicial do aplicativo (versão 2.4)</figcaption></figure>
+<figure style="margin: 0; flex: 1 1 320px; min-width: 0"><img src="img/lappito-relatorio.png" alt="Relatório de uma reauditoria: veredito Ajustar, regras resolvidas, pendentes e erro novo, com as correções críticas primeiro" style="width: 100%; aspect-ratio: 1119 / 845; object-fit: cover; border: 1px solid #121417"><figcaption style="font-size: 13px; color: #5B616B; margin-top: 6px">Relatório da 2ª rodada: o que foi resolvido, o que segue pendente e o que surgiu de novo</figcaption></figure>
 </div>
 </article>
-
-<article id="p2">
-<p class="art-k">Projeto 2 · LAPPI/UFC</p>
-<h2 class="art-h">Sistema de controle de desempenho dos membros</h2>
-<div class="ficha">
-<div><span>Papel</span><strong>Idealização e desenvolvimento, individual</strong></div>
-<div><span>Período</span><strong>2026, versão 8 em novembro</strong></div>
-<div><span>Situação</span><strong>Concluído; implementação prevista para 2027</strong></div>
 </div>
-<div class="corpo">
-<div class="c1">
-<h3>Problema</h3>
-<p>O laboratório oferece bolsa e horas de extensão, mas membros inativos permaneciam por falta de um critério escrito. Sem regras, qualquer decisão de desligamento parecia pessoal, o que sobrecarregava quem trabalhava e prejudicava o clima da equipe.</p>
-<h3>Solução</h3>
-<p>Planilha que mede o cumprimento de metas por perfil (coordenador, bolsista e voluntário), classifica cada membro como ativo, em atenção ou crítico e indica a ação a tomar e quem a conduz. A planilha mede e indica; a coordenação aplica.</p>
-<h3>Destaques</h3>
-<ul>
+
+<div data-proj="p2" data-areas="Dados e análise|Qualidade|Processos|Pessoas">
+<article id="p2" style="padding-top: 48px; border-top: 1px solid #E2E4E8">
+<p style="margin: 0 0 8px; font-size: 15px; font-weight: 600; color: #8C6A2E">Projeto 2 · LAPPI/UFC</p>
+<h2 style="margin: 0; font-size: clamp(28px, 3.4vw, 40px); line-height: 1.08">Sistema de controle de desempenho dos membros</h2>
+<div style="margin-top: 12px; display: flex; flex-wrap: wrap; gap: 6px"><span style="font-size: 12px; font-weight: 600; padding: 3px 10px; background: #ECEDEF">Dados e análise</span><span style="font-size: 12px; font-weight: 600; padding: 3px 10px; background: #ECEDEF">Qualidade</span><span style="font-size: 12px; font-weight: 600; padding: 3px 10px; background: #ECEDEF">Processos</span><span style="font-size: 12px; font-weight: 600; padding: 3px 10px; background: #ECEDEF">Pessoas</span></div>
+<div style="margin: 24px 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); border-top: 2px solid #121417; border-bottom: 1px solid #E2E4E8">
+<div style="padding: 14px 16px 14px 0"><span style="display: block; font-size: 13px; color: #5B616B">Papel</span><span style="font-weight: 600">Idealização e desenvolvimento, individual</span></div>
+<div style="padding: 14px 16px 14px 0"><span style="display: block; font-size: 13px; color: #5B616B">Período</span><span style="font-weight: 600">2026, versão 8 em novembro</span></div>
+<div style="padding: 14px 16px 14px 0"><span style="display: block; font-size: 13px; color: #5B616B">Situação</span><span style="font-weight: 600">Concluído; implementação prevista para 2027</span></div>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 40px">
+<div style="flex: 1 1 420px; min-width: 0">
+<h3 style="margin: 0 0 6px; font-size: 18px">Problema</h3>
+<p style="margin: 0 0 20px">O laboratório oferece bolsa e horas de extensão, mas membros inativos permaneciam por falta de um critério escrito. Sem regras, qualquer decisão de desligamento parecia pessoal, o que sobrecarregava quem trabalhava e prejudicava o clima da equipe.</p>
+<h3 style="margin: 0 0 6px; font-size: 18px">Solução</h3>
+<p style="margin: 0 0 20px">Planilha que mede o cumprimento de metas por perfil (coordenador, bolsista e voluntário), classifica cada membro como ativo, em atenção ou crítico e indica a ação a tomar e quem a conduz. A planilha mede e indica; a coordenação aplica.</p>
+<h3 style="margin: 0 0 6px; font-size: 18px">Destaques</h3>
+<ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px">
 <li>Indicadores de presença, pontualidade, escalas em eventos, volume e prazo de entregas e OKRs.</li>
 <li>Diagnóstico que distingue falha do processo de caso individual: se muitos membros ficam abaixo da meta no mesmo indicador, a planilha recomenda revisar o processo antes de advertir.</li>
 <li>Plano de Melhoria de Desempenho escrito pelo próprio membro, com prazo calculado automaticamente sem fins de semana e feriados.</li>
@@ -295,158 +303,240 @@ figure{margin:0}figcaption{font-size:13px;color:var(--cinza);margin-top:6px}
 <li>Painel gerencial, ficha individual e manual de uso embutido, para que outra pessoa possa assumir a ferramenta.</li>
 </ul>
 </div>
-<div class="c2">
-<div class="nums">
-<div><b>11</b><span>abas integradas</span></div>
-<div><b>8</b><span>versões evolutivas</span></div>
-<div><b>6</b><span>estados de acompanhamento</span></div>
-<div><b>18</b><span>combinações de ação mapeadas</span></div>
+<div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; background: #C8CCD2; border: 1px solid #C8CCD2">
+<div style="background: #ffffff; padding: 18px"><span style="display: block; font-family: Montserrat, sans-serif; font-size: 36px; font-weight: 700; line-height: 1; color: #8C6A2E">11</span><span style="font-size: 14px; color: #5B616B">abas integradas</span></div>
+<div style="background: #ffffff; padding: 18px"><span style="display: block; font-family: Montserrat, sans-serif; font-size: 36px; font-weight: 700; line-height: 1; color: #8C6A2E">8</span><span style="font-size: 14px; color: #5B616B">versões evolutivas</span></div>
+<div style="background: #ffffff; padding: 18px"><span style="display: block; font-family: Montserrat, sans-serif; font-size: 36px; font-weight: 700; line-height: 1; color: #8C6A2E">6</span><span style="font-size: 14px; color: #5B616B">estados de acompanhamento</span></div>
+<div style="background: #ffffff; padding: 18px"><span style="display: block; font-family: Montserrat, sans-serif; font-size: 36px; font-weight: 700; line-height: 1; color: #8C6A2E">18</span><span style="font-size: 14px; color: #5B616B">combinações de ação mapeadas</span></div>
 </div>
-<div class="fluxo">
-<span class="mini">Escada de acompanhamento</span>
-<div class="escada">
-<div class="degrau"><strong>1ª atenção</strong><br>Conversa com o coordenador</div>
-<div class="degrau"><strong>2ª atenção</strong><br>Gestão de Pessoas e plano de melhoria</div>
-<div class="degrau"><strong>3ª atenção</strong><br>Convite a se retirar</div>
+<div style="background: #F7F7F8; padding: 24px; display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 13px; font-weight: 600; color: #3A3F47">Escada de acompanhamento</span>
+<div style="display: flex; gap: 8px; align-items: stretch; flex-wrap: wrap">
+<div style="flex: 1 1 90px; background: #ffffff; border-top: 4px solid #2A2E35; padding: 10px; font-size: 14px"><strong>1ª atenção</strong><br>Conversa com o coordenador</div>
+<div style="flex: 1 1 90px; background: #ffffff; border-top: 4px solid #2A2E35; padding: 10px; font-size: 14px"><strong>2ª atenção</strong><br>Gestão de Pessoas e plano de melhoria</div>
+<div style="flex: 1 1 90px; background: #ffffff; border-top: 4px solid #2A2E35; padding: 10px; font-size: 14px"><strong>3ª atenção</strong><br>Convite a se retirar</div>
 </div>
-<div class="escada">
-<div class="degrau crit largo"><strong>1º crítico</strong><br>Advertência formal e plano de melhoria</div>
-<div class="degrau crit"><strong>2º crítico</strong><br>Convite a se retirar</div>
+<div style="display: flex; gap: 8px; align-items: stretch; flex-wrap: wrap">
+<div style="flex: 2 1 180px; background: #ffffff; border-top: 4px solid #D4B07A; padding: 10px; font-size: 14px"><strong>1º crítico</strong><br>Advertência formal e plano de melhoria</div>
+<div style="flex: 1 1 90px; background: #ffffff; border-top: 4px solid #D4B07A; padding: 10px; font-size: 14px"><strong>2º crítico</strong><br>Convite a se retirar</div>
 </div>
-<span style="font-size:13px;color:var(--cinza2)">Dois checkpoints positivos seguidos zeram o histórico.</span>
+<span style="font-size: 13px; color: #3A3F47">Dois checkpoints positivos seguidos zeram o histórico.</span>
 </div>
-<p class="tech">Google Sheets · Excel · fórmulas, validações e painel com gráficos</p>
+<p style="margin: 0; font-size: 14px; color: #5B616B">Google Sheets · Excel · fórmulas, validações e painel com gráficos</p>
 </div>
 </div>
 </article>
-
-<article id="p3">
-<p class="art-k">Projeto 3 · Trabalho acadêmico · UFC</p>
-<h2 class="art-h">Eficiência das escolas estaduais de educação profissional do Ceará</h2>
-<div class="ficha">
-<div><span>Disciplina</span><strong>Análise de Eficiência e Produtividade</strong></div>
-<div><span>Papel</span><strong>Trabalho individual</strong></div>
-<div><span>Período</span><strong>2025</strong></div>
 </div>
-<div class="corpo">
-<div class="c1">
-<h3>Pergunta</h3>
-<p>Quais Escolas Estaduais de Educação Profissional (EEEPs) do Ceará transformam seus recursos, como professores, salas e a turma recebida, em alunos formados com mais eficiência, e quais servem de referência para as demais?</p>
-<h3>Método</h3>
-<p>Análise Envoltória de Dados (DEA) orientada a output, nos modelos CCR e BCC, aplicada a 118 escolas. Os dados vieram dos microdados do Censo Escolar 2022 e 2024 e das taxas de rendimento do INEP, além do SPAECE 2024, cruzados pelo código de cada escola. A análise inclui eficiência de escala, supereficiência para desempatar as escolas eficientes e a comparação entre duas especificações: uma com fluxo de alunos e aprendizagem, outra apenas com fluxo.</p>
-<h3>Principais resultados</h3>
-<ul>
+
+<div data-proj="p6" data-areas="Dados e análise|Processos">
+<article id="p6" style="padding-top: 48px; border-top: 1px solid #E2E4E8">
+<p style="margin: 0 0 8px; font-size: 15px; font-weight: 600; color: #8C6A2E">Projeto 3 · Trabalho acadêmico · UFC</p>
+<h2 style="margin: 0; font-size: clamp(28px, 3.4vw, 40px); line-height: 1.08">Eficiência das escolas estaduais de educação profissional do Ceará</h2>
+<div style="margin-top: 12px; display: flex; flex-wrap: wrap; gap: 6px"><span style="font-size: 12px; font-weight: 600; padding: 3px 10px; background: #ECEDEF">Dados e análise</span><span style="font-size: 12px; font-weight: 600; padding: 3px 10px; background: #ECEDEF">Processos</span></div>
+<div style="margin: 24px 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); border-top: 2px solid #121417; border-bottom: 1px solid #E2E4E8">
+<div style="padding: 14px 16px 14px 0"><span style="display: block; font-size: 13px; color: #5B616B">Disciplina</span><span style="font-weight: 600">Análise de Eficiência e Produtividade</span></div>
+<div style="padding: 14px 16px 14px 0"><span style="display: block; font-size: 13px; color: #5B616B">Papel</span><span style="font-weight: 600">Trabalho individual</span></div>
+<div style="padding: 14px 16px 14px 0"><span style="display: block; font-size: 13px; color: #5B616B">Período</span><span style="font-weight: 600">2025</span></div>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 40px">
+<div style="flex: 1 1 420px; min-width: 0">
+<h3 style="margin: 0 0 6px; font-size: 18px">Pergunta</h3>
+<p style="margin: 0 0 20px">Quais Escolas Estaduais de Educação Profissional (EEEPs) do Ceará transformam seus recursos, como professores, salas e a turma recebida, em alunos formados com mais eficiência, e quais servem de referência para as demais?</p>
+<h3 style="margin: 0 0 6px; font-size: 18px">Método</h3>
+<p style="margin: 0 0 20px">Análise Envoltória de Dados (DEA) orientada a output, nos modelos CCR e BCC, aplicada a 118 escolas. Os dados vieram dos microdados do Censo Escolar 2022 e 2024 e das taxas de rendimento do INEP, além do SPAECE 2024, cruzados pelo código de cada escola. A análise inclui eficiência de escala, supereficiência para desempatar as escolas eficientes e a comparação entre duas especificações: uma com fluxo de alunos e aprendizagem, outra apenas com fluxo.</p>
+<h3 style="margin: 0 0 6px; font-size: 18px">Principais resultados</h3>
+<ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px">
 <li>Rede homogênea, com eficiência média entre 0,92 e 0,95 nos quatro cenários analisados.</li>
 <li>A proficiência no SPAECE quase não se relaciona com os recursos das escolas; incluí-la muda o ranking, e uma escola passa do 116º para o 12º lugar.</li>
 <li>Pelo modelo de fluxo, as escolas poderiam formar cerca de 1.026 alunos a mais com os mesmos recursos.</li>
 <li>Escolas de Fortaleza e do interior apresentam eficiência praticamente igual.</li>
 </ul>
 </div>
-<div class="c2">
-<figure class="grafico"><img src="img/dea-ccr-bcc.png" width="1600" height="1200" loading="lazy" alt="Gráfico de dispersão da eficiência das escolas nos modelos CCR e BCC, colorido pelo tipo de retorno de escala" style="width:100%;height:auto"><figcaption>Eficiência de cada escola nos modelos CCR e BCC, gerado em R</figcaption></figure>
-<div class="nums">
-<div><b>118</b><span>escolas analisadas</span></div>
-<div><b>4</b><span>cenários comparados</span></div>
+<div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+<figure style="margin: 0; border: 1px solid #E2E4E8; padding: 12px; background: #ffffff"><img src="img/dea-ccr-bcc.png" alt="Gráfico de dispersão da eficiência das escolas nos modelos CCR e BCC, colorido pelo tipo de retorno de escala" style="width: 100%; aspect-ratio: 4 / 3; object-fit: contain"><figcaption style="font-size: 13px; color: #5B616B; margin-top: 6px">Eficiência de cada escola nos modelos CCR e BCC, gerado em R</figcaption></figure>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; background: #C8CCD2; border: 1px solid #C8CCD2">
+<div style="background: #ffffff; padding: 18px"><span style="display: block; font-family: Montserrat, sans-serif; font-size: 36px; font-weight: 700; line-height: 1; color: #8C6A2E">118</span><span style="font-size: 14px; color: #5B616B">escolas analisadas</span></div>
+<div style="background: #ffffff; padding: 18px"><span style="display: block; font-family: Montserrat, sans-serif; font-size: 36px; font-weight: 700; line-height: 1; color: #8C6A2E">4</span><span style="font-size: 14px; color: #5B616B">cenários comparados</span></div>
 </div>
-<p class="tech">R (RStudio) · pacote Benchmarking · conferência independente em Python</p>
-<p class="nota">Reconstruído em novembro de 2026, com apoio de IA na organização e na apresentação, após a perda dos dados originais, e validado no RStudio.</p>
+<p style="margin: 0; font-size: 14px; color: #5B616B">R (RStudio) · pacote Benchmarking · conferência independente em Python</p>
+<p style="margin: 0; font-size: 13px; color: #5B616B">Reconstruído em novembro de 2026, com apoio de IA na organização e na apresentação, após a perda dos dados originais, e validado no RStudio.</p>
 </div>
 </div>
 </article>
+</div>
 
-<article id="p4">
-<p class="art-k">Projeto 4 · LAPPI/UFC</p>
-<h2 class="art-h">Chaveiro Lappito</h2>
-<div class="ficha">
-<div><span>Papel</span><strong>Idealização do produto e design</strong></div>
-<div><span>Período</span><strong>Junho a setembro de 2026</strong></div>
-<div><span>Resultado</span><strong>30 unidades vendidas ou distribuídas</strong></div>
+<div data-proj="p3" data-areas="Marketing|Gestão de projetos">
+<article id="p3" style="padding-top: 48px; border-top: 1px solid #E2E4E8">
+<p style="margin: 0 0 8px; font-size: 15px; font-weight: 600; color: #8C6A2E">Projeto 4 · LAPPI/UFC</p>
+<h2 style="margin: 0; font-size: clamp(28px, 3.4vw, 40px); line-height: 1.08">Chaveiro Lappito</h2>
+<div style="margin-top: 12px; display: flex; flex-wrap: wrap; gap: 6px"><span style="font-size: 12px; font-weight: 600; padding: 3px 10px; background: #ECEDEF">Marketing</span><span style="font-size: 12px; font-weight: 600; padding: 3px 10px; background: #ECEDEF">Gestão de projetos</span></div>
+<div style="margin: 24px 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); border-top: 2px solid #121417; border-bottom: 1px solid #E2E4E8">
+<div style="padding: 14px 16px 14px 0"><span style="display: block; font-size: 13px; color: #5B616B">Papel</span><span style="font-weight: 600">Idealização do produto e design</span></div>
+<div style="padding: 14px 16px 14px 0"><span style="display: block; font-size: 13px; color: #5B616B">Período</span><span style="font-weight: 600">Junho a setembro de 2026</span></div>
+<div style="padding: 14px 16px 14px 0"><span style="display: block; font-size: 13px; color: #5B616B">Resultado</span><span style="font-weight: 600">30 unidades vendidas ou distribuídas</span></div>
 </div>
-<div class="corpo">
-<div class="texto" style="flex:1 1 380px;min-width:0">
-<p>O mascote do laboratório, até então presente apenas nas publicações digitais, foi transformado em um chaveiro impresso em 3D para levar a divulgação do LAPPI para além das redes sociais.</p>
-<p>Fui responsável pela ideia do produto e pela concepção do design, e forneci os dados iniciais que orientaram a modelagem 3D, executada pela equipe do laboratório. A produção começou em setembro de 2026.</p>
-<p>Até novembro de 2026, as 30 unidades produzidas foram vendidas ou distribuídas como brinde em eventos como o Siará Tech, a Feira do Conhecimento e feiras da UFC.</p>
-<p class="tech">PLA · impressão FDM · cerca de 5,2 × 5,2 × 1,0 cm</p>
+<div style="display: flex; flex-wrap: wrap; gap: 40px; align-items: flex-start">
+<div style="flex: 1 1 380px; min-width: 0">
+<p style="margin: 0 0 16px">O mascote do laboratório, até então presente apenas nas publicações digitais, foi transformado em um chaveiro impresso em 3D para levar a divulgação do LAPPI para além das redes sociais.</p>
+<p style="margin: 0 0 16px">Fui responsável pela ideia do produto e pela concepção do design, e forneci os dados iniciais que orientaram a modelagem 3D, executada pela equipe do laboratório. A produção começou em setembro de 2026.</p>
+<p style="margin: 0 0 20px">Até novembro de 2026, as 30 unidades produzidas foram vendidas ou distribuídas como brinde em eventos como o Siará Tech, a Feira do Conhecimento e feiras da UFC.</p>
+<p style="margin: 0; font-size: 14px; color: #5B616B">PLA · impressão FDM · cerca de 5,2 × 5,2 × 1,0 cm</p>
 </div>
-<figure style="flex:1 1 480px;min-width:0"><img src="img/chaveiro-ficha-tecnica.jpg" width="1080" height="842" loading="lazy" alt="Ficha técnica da variação tradicional do chaveiro, com vistas e especificações" style="width:100%;height:auto"><figcaption>Ficha técnica da variação tradicional</figcaption></figure>
+<div style="flex: 1 1 480px; min-width: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px">
+<figure style="margin: 0"><img src="img/chaveiros.jpg" alt="Chaveiros Lappito impressos em 3D, enfileirados em uma prateleira" style="width: 100%; aspect-ratio: 3 / 4; object-fit: cover"><figcaption style="font-size: 13px; color: #5B616B; margin-top: 6px">Unidades produzidas</figcaption></figure>
+<figure style="margin: 0; display: flex; flex-direction: column; justify-content: flex-end"><img src="img/chaveiro-ficha-tecnica.jpg" alt="Ficha técnica da variação tradicional do chaveiro, com vistas e especificações" style="width: 100%; aspect-ratio: 1080 / 842; object-fit: cover"><figcaption style="font-size: 13px; color: #5B616B; margin-top: 6px">Ficha técnica da variação tradicional</figcaption></figure>
+</div>
 </div>
 </article>
+</div>
 
-<article id="p5">
-<p class="art-k">Projeto 5 · CAEPRO/UFC</p>
-<h2 class="art-h">Redesign das canecas do centro acadêmico</h2>
-<div class="ficha">
-<div><span>Papel</span><strong>Criação das artes</strong></div>
-<div><span>Período</span><strong>Novembro de 2026</strong></div>
-<div><span>Situação</span><strong>Em produção para venda</strong></div>
+<div data-proj="p4" data-areas="Marketing">
+<article id="p4" style="padding-top: 48px; border-top: 1px solid #E2E4E8">
+<p style="margin: 0 0 8px; font-size: 15px; font-weight: 600; color: #8C6A2E">Projeto 5 · CAEPRO/UFC</p>
+<h2 style="margin: 0; font-size: clamp(28px, 3.4vw, 40px); line-height: 1.08">Redesign das canecas do centro acadêmico</h2>
+<div style="margin-top: 12px; display: flex; flex-wrap: wrap; gap: 6px"><span style="font-size: 12px; font-weight: 600; padding: 3px 10px; background: #ECEDEF">Marketing</span></div>
+<div style="margin: 24px 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); border-top: 2px solid #121417; border-bottom: 1px solid #E2E4E8">
+<div style="padding: 14px 16px 14px 0"><span style="display: block; font-size: 13px; color: #5B616B">Papel</span><span style="font-weight: 600">Criação das artes</span></div>
+<div style="padding: 14px 16px 14px 0"><span style="display: block; font-size: 13px; color: #5B616B">Período</span><span style="font-weight: 600">Novembro de 2026</span></div>
+<div style="padding: 14px 16px 14px 0"><span style="display: block; font-size: 13px; color: #5B616B">Situação</span><span style="font-weight: 600">Em produção para venda</span></div>
 </div>
-<div class="corpo">
-<div class="texto" style="flex:1 1 340px;min-width:0">
-<p>Como primeira demanda na diretoria de marketing do CAEPRO, recebi a tarefa de renovar as canecas do centro acadêmico, cujos designs anteriores não despertavam interesse.</p>
-<p>Criei duas novas artes a partir da identidade e do mascote já existentes. O destaque é a versão "Just in Time: acabou, encheu", que transforma um conceito central da Engenharia de Produção em mensagem de produto.</p>
-<figure style="max-width:300px"><img src="img/caneca-azul.jpg" width="1400" height="933" loading="lazy" alt="Simulação da segunda caneca, em azul metálico" style="width:100%;height:auto"><figcaption>Segunda versão, em azul metálico</figcaption></figure>
+<div style="display: flex; flex-wrap: wrap; gap: 40px; align-items: flex-start">
+<div style="flex: 1 1 340px; min-width: 0">
+<p style="margin: 0 0 16px">Como primeira demanda na diretoria de marketing do CAEPRO, recebi a tarefa de renovar as canecas do centro acadêmico, cujos designs anteriores não despertavam interesse.</p>
+<p style="margin: 0 0 16px">Criei duas novas artes a partir da identidade e do mascote já existentes. O destaque é a versão "Just in Time: acabou, encheu", que transforma um conceito central da Engenharia de Produção em mensagem de produto.</p>
+<figure style="margin: 0; max-width: 300px"><img src="img/caneca-azul.jpg" alt="Simulação da segunda caneca, em azul metálico" style="width: 100%; aspect-ratio: 3 / 2; object-fit: cover"><figcaption style="font-size: 13px; color: #5B616B; margin-top: 6px">Segunda versão, em azul metálico</figcaption></figure>
 </div>
-<figure style="flex:1.4 1 480px;min-width:0"><img src="img/caneca-just-in-time.jpg" width="1400" height="933" loading="lazy" alt="Simulação da caneca Just in Time, frente e verso" style="width:100%;height:auto"><figcaption>Versão "Just in Time", frente e verso (simulação)</figcaption></figure>
+<figure style="margin: 0; flex: 1.4 1 480px; min-width: 0"><img src="img/caneca-just-in-time.jpg" alt="Simulação da caneca Just in Time, frente e verso" style="width: 100%; aspect-ratio: 3 / 2; object-fit: cover"><figcaption style="font-size: 13px; color: #5B616B; margin-top: 6px">Versão "Just in Time", frente e verso (simulação)</figcaption></figure>
 </div>
 </article>
+</div>
 
-<article id="p6">
-<p class="art-k">Projeto 6 · LAPPI/UFC · Conceito</p>
-<h2 class="art-h">Porta-caneta LAPPI com suporte de celular</h2>
-<div class="ficha">
-<div><span>Papel</span><strong>Idealização do produto e design</strong></div>
-<div><span>Período</span><strong>Junho de 2026</strong></div>
-<div><span>Situação</span><strong>Conceito, não produzido</strong></div>
+<div data-proj="p5" data-areas="Gestão de projetos">
+<article id="p5" style="padding-top: 48px; border-top: 1px solid #E2E4E8">
+<p style="margin: 0 0 8px; font-size: 15px; font-weight: 600; color: #8C6A2E">Projeto 6 · LAPPI/UFC · Conceito</p>
+<h2 style="margin: 0; font-size: clamp(28px, 3.4vw, 40px); line-height: 1.08">Porta-caneta LAPPI com suporte de celular</h2>
+<div style="margin-top: 12px; display: flex; flex-wrap: wrap; gap: 6px"><span style="font-size: 12px; font-weight: 600; padding: 3px 10px; background: #ECEDEF">Gestão de projetos</span></div>
+<div style="margin: 24px 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); border-top: 2px solid #121417; border-bottom: 1px solid #E2E4E8">
+<div style="padding: 14px 16px 14px 0"><span style="display: block; font-size: 13px; color: #5B616B">Papel</span><span style="font-weight: 600">Idealização do produto e design</span></div>
+<div style="padding: 14px 16px 14px 0"><span style="display: block; font-size: 13px; color: #5B616B">Período</span><span style="font-weight: 600">Junho de 2026</span></div>
+<div style="padding: 14px 16px 14px 0"><span style="display: block; font-size: 13px; color: #5B616B">Situação</span><span style="font-weight: 600">Conceito, não produzido</span></div>
 </div>
-<div class="corpo">
-<div class="texto" style="flex:1 1 320px;min-width:0">
-<p>Organizador de mesa com a identidade visual do laboratório, pensado como brinde. Reúne compartimento para canetas, suporte de celular integrado, personalização com nome em relevo e módulos laterais encaixáveis.</p>
-<p>O projeto foi desenvolvido até a prancha de conceito, com vistas, dimensões (110 × 100 × 105 mm), parâmetros de impressão FDM e variações de cores.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 40px; align-items: flex-start">
+<div style="flex: 1 1 320px; min-width: 0">
+<p style="margin: 0 0 16px">Organizador de mesa com a identidade visual do laboratório, pensado como brinde. Reúne compartimento para canetas, suporte de celular integrado, personalização com nome em relevo e módulos laterais encaixáveis.</p>
+<p style="margin: 0 0 16px">O projeto foi desenvolvido até a prancha de conceito, com vistas, dimensões (110 × 100 × 105 mm), parâmetros de impressão FDM e variações de cores.</p>
 </div>
-<figure style="flex:1.6 1 520px;min-width:0"><img src="img/porta-caneta-prancha.jpg" width="1400" height="933" loading="lazy" alt="Prancha de conceito do porta-caneta, com vistas, dimensões e especificações" style="width:100%;height:auto"><figcaption>Prancha de conceito</figcaption></figure>
+<figure style="margin: 0; flex: 1.6 1 520px; min-width: 0"><img src="img/porta-caneta-prancha.jpg" alt="Prancha de conceito do porta-caneta, com vistas, dimensões e especificações" style="width: 100%; aspect-ratio: 3 / 2; object-fit: cover"><figcaption style="font-size: 13px; color: #5B616B; margin-top: 6px">Prancha de conceito</figcaption></figure>
 </div>
 </article>
+</div>
+</div>
 </div>
 </section>
+</div>
 
-<!-- PERFIL -->
-<section id="v-perfil" class="view sec" aria-labelledby="t-perfil">
-<p class="kicker">Perfil</p>
-<h1 id="t-perfil" class="h1">Gabriel Magalhães Morais</h1>
-<p style="margin:10px 0 24px;font-size:18px;max-width:680px">Estudante de Engenharia de Produção na Universidade Federal do Ceará, com atuação em análise de dados, melhoria de processos, qualidade, gestão de pessoas e comunicação.</p>
-<div class="perfil-grid">
-<div class="card"><h2 class="card-t">Formação</h2><span style="font-weight:600">Engenharia de Produção</span><span>Universidade Federal do Ceará (UFC)</span><span style="color:var(--cinza)">4º semestre</span></div>
-<div class="card" style="gap:10px"><h2 class="card-t">Atuação</h2><span><strong>Analista de marketing</strong> · LAPPI, Laboratório de Prototipagem de Produtos Inovadores (UFC), membro voluntário</span><span><strong>Diretor de marketing</strong> · CAEPRO, Centro Acadêmico de Engenharia de Produção (UFC), desde setembro de 2026</span></div>
-<div class="card"><h2 class="card-t">Ferramentas</h2><span>Python · R (RStudio) · Excel · Google Sheets</span><span>Illustrator · Canva</span><span>Impressão 3D (FDM)</span></div>
-<div class="card"><h2 class="card-t">Áreas de interesse</h2><span>Dados e análise · Qualidade · Projetos</span><span>Marketing · Gestão de pessoas · Processos</span></div>
-<div class="card"><h2 class="card-t">Contato</h2><span style="overflow-wrap:anywhere">gm283027@gmail.com</span><a href="https://www.linkedin.com/in/gabriel-magalh%C3%A3es-443759366" target="_blank" rel="noopener">linkedin.com/in/gabriel-magalhães-443759366</a></div>
+<div data-view="perfil" hidden>
+<section style="padding: 32px clamp(16px, 3vw, 40px) 64px; max-width: 1180px">
+<p style="margin: 0 0 6px; font-size: 14px; font-weight: 600; color: #8C6A2E">Perfil</p>
+<h1 style="margin: 0; font-size: clamp(30px, 3.6vw, 42px); line-height: 1.08">Gabriel Magalhães Morais</h1>
+<p style="margin: 10px 0 24px; font-size: 18px; max-width: 680px">Estudante de Engenharia de Produção na Universidade Federal do Ceará, com atuação em análise de dados, melhoria de processos, qualidade, gestão de pessoas e comunicação.</p>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px">
+<div style="background: #ffffff; border: 1px solid #E2E4E8; padding: 20px; display: flex; flex-direction: column; gap: 6px">
+<h2 style="margin: 0 0 14px; font-size: 13px; font-weight: 700; color: #5B616B; letter-spacing: 0.02em">Formação</h2>
+<span style="font-weight: 600">Engenharia de Produção</span>
+<span>Universidade Federal do Ceará (UFC)</span>
+<span style="color: #5B616B">4º semestre</span>
+</div>
+<div style="background: #ffffff; border: 1px solid #E2E4E8; padding: 20px; display: flex; flex-direction: column; gap: 10px">
+<h2 style="margin: 0 0 14px; font-size: 13px; font-weight: 700; color: #5B616B; letter-spacing: 0.02em">Atuação</h2>
+<span><strong>Analista de marketing</strong> · LAPPI, Laboratório de Prototipagem de Produtos Inovadores (UFC), membro voluntário</span>
+<span><strong>Diretor de marketing</strong> · CAEPRO, Centro Acadêmico de Engenharia de Produção (UFC), desde setembro de 2026</span>
+</div>
+<div style="background: #ffffff; border: 1px solid #E2E4E8; padding: 20px; display: flex; flex-direction: column; gap: 6px">
+<h2 style="margin: 0 0 14px; font-size: 13px; font-weight: 700; color: #5B616B; letter-spacing: 0.02em">Ferramentas</h2>
+<span>Python · R (RStudio) · Excel · Google Sheets</span>
+<span>Illustrator · Canva</span>
+<span>Impressão 3D (FDM)</span>
+</div>
+<div style="background: #ffffff; border: 1px solid #E2E4E8; padding: 20px; display: flex; flex-direction: column; gap: 6px">
+<h2 style="margin: 0 0 14px; font-size: 13px; font-weight: 700; color: #5B616B; letter-spacing: 0.02em">Áreas de interesse</h2>
+<span>Dados e análise · Qualidade · Gestão de projetos</span>
+<span>Marketing · Gestão de pessoas · Processos</span>
+</div>
+<div style="background: #ffffff; border: 1px solid #E2E4E8; padding: 20px; display: flex; flex-direction: column; gap: 6px">
+<h2 style="margin: 0 0 14px; font-size: 13px; font-weight: 700; color: #5B616B; letter-spacing: 0.02em">Contato</h2>
+<span style="overflow-wrap: anywhere">gm283027@gmail.com</span>
+<a href="https://www.linkedin.com/in/gabriel-magalh%C3%A3es-443759366">linkedin.com/in/gabriel-magalhães-443759366</a>
+</div>
 </div>
 </section>
-
-</main>
 </div>
 
+</div>
+</div>
 <script>
 (function () {
-  var views = ['visao-geral', 'projetos', 'perfil'];
-  var projetos = ['p1', 'p2', 'p3', 'p4', 'p5', 'p6'];
-  function mostrar() {
-    var h = (location.hash || '#visao-geral').slice(1);
-    var view = views.indexOf(h) >= 0 ? h : (projetos.indexOf(h) >= 0 ? 'projetos' : 'visao-geral');
-    views.forEach(function (v) {
-      document.getElementById('v-' + v).classList.toggle('ativa', v === view);
+  var D = "#D4B07A";
+  var views = ["visao-geral", "projetos", "perfil"];
+  var filtro = "todos";
+  function showView(v) {
+    views.forEach(function (x) {
+      var el = document.querySelector('[data-view="' + x + '"]');
+      if (el) el.hidden = x !== v;
     });
-    document.querySelectorAll('.nav a').forEach(function (a) {
-      if (a.dataset.view === view) { a.setAttribute('aria-current', 'page'); }
-      else { a.removeAttribute('aria-current'); }
+    document.querySelectorAll("[data-nav]").forEach(function (b) {
+      var on = b.getAttribute("data-nav") === v;
+      b.style.background = on ? D : "rgba(255,255,255,0.08)";
+      b.style.color = on ? "#121417" : "#ffffff";
+      if (on) b.setAttribute("aria-current", "page"); else b.removeAttribute("aria-current");
     });
-    var alvo = projetos.indexOf(h) >= 0 ? document.getElementById(h) : null;
-    if (alvo) { alvo.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
-    else { window.scrollTo(0, 0); }
   }
-  window.addEventListener('hashchange', mostrar);
-  mostrar();
+  function setFilter(f) {
+    filtro = f;
+    var n = 0;
+    document.querySelectorAll("[data-proj]").forEach(function (el) {
+      var ok = f === "todos" || el.getAttribute("data-areas").split("|").indexOf(f) >= 0;
+      el.hidden = !ok; if (ok) n++;
+      var link = document.querySelector('[data-idx="' + el.getAttribute("data-proj") + '"]');
+      if (link) link.hidden = !ok;
+    });
+    document.querySelectorAll("[data-filter]").forEach(function (b) {
+      var on = b.getAttribute("data-filter") === f;
+      b.style.background = on ? D : "#ffffff";
+      b.style.borderColor = on ? D : "#C8CCD2";
+      b.setAttribute("aria-pressed", on ? "true" : "false");
+    });
+    var r = document.getElementById("resumo-filtro");
+    if (r) r.textContent = f === "todos" ? "Mostrando os 6 projetos." : "Mostrando " + n + " de 6 projetos em " + f + ".";
+  }
+  function go(view, anchor) {
+    showView(view);
+    if (history.replaceState) history.replaceState(null, "", "#" + (anchor || view));
+    setTimeout(function () {
+      var el = anchor ? document.getElementById(anchor) : null;
+      if (el) el.scrollIntoView({ behavior: "smooth", block: "start" }); else window.scrollTo(0, 0);
+    }, 30);
+  }
+  document.addEventListener("click", function (e) {
+    var b = e.target.closest("[data-nav],[data-go],[data-go-view],[data-filter],[data-filter-go],[data-idx]");
+    if (!b) return;
+    if (b.hasAttribute("data-idx")) { e.preventDefault(); go("projetos", b.getAttribute("data-idx")); return; }
+    if (b.hasAttribute("data-nav")) { go(b.getAttribute("data-nav")); return; }
+    if (b.hasAttribute("data-go")) { setFilter("todos"); go("projetos", b.getAttribute("data-go")); return; }
+    if (b.hasAttribute("data-filter-go")) { setFilter(b.getAttribute("data-filter-go")); go("projetos"); return; }
+    if (b.hasAttribute("data-filter")) { setFilter(b.getAttribute("data-filter")); return; }
+    if (b.hasAttribute("data-go-view")) { if (b.hasAttribute("data-filter-set")) setFilter("todos"); go(b.getAttribute("data-go-view")); }
+  });
+  function fromHash() {
+    var h = (location.hash || "").replace("#", "");
+    if (/^p\d$/.test(h) && document.getElementById(h)) { setFilter("todos"); go("projetos", h); }
+    else if (views.indexOf(h) >= 0) go(h);
+    else showView("visao-geral");
+  }
+  setFilter("todos");
+  fromHash();
+  window.addEventListener("hashchange", fromHash);
 })();
 </script>
 </body>
